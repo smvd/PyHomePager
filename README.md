@@ -4,7 +4,9 @@ PyHomePager is a python script that can generate custom homepages based on theme
 ## Using a template
 Using a template is very simple.
 First you want to coppy the template configuration to the root of the project.
+
 `cp templates/{the theme you want to use}/config.ini .`
+
 Now you can edit config.ini to style the template to your liking.
 The config file has a nice upgrade over a normal `.ini` file, it supports variables.
 You can define a variable as `-{variable name} = {value}` and then reference it in the rest of the config as `-{variable name}`.
