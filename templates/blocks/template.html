@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>$page_title$</title>
+        <style>
+            body {
+                height:             100%;
+                color:              $page_color$;
+                background-color:   $page_background$;
+            }
+
+            #center {
+                top:                    0;
+                right:                  0;
+                bottom:                 0;
+                left:                   0;
+                position:               absolute;
+                margin:                 auto;
+                width:                  100%;
+                height:                 100%;
+                display:                grid;
+                grid-gap:               $page_gap$;
+                grid-template-columns:  repeat($page_columns$, auto);
+                justify-content:        center;
+                align-content:          center;
+            }
+
+            #center a {
+                color:              $tile_color$;
+                background-color:   $tile_background$;
+                border:             $tile_border_thickness$ solid $tile_border$;
+                width:              $tile_width$;
+                height:             $tile_height$;
+                display:            grid;
+                align-content:      center;
+                text-align:         center;
+                text-decoration:    none;
+                transition:         $tile_animation_speed$;
+            }
+
+            #center .blank {
+                transform: scale(0);
+            }
+
+            #center a:hover {
+                color:              $hover_color$;
+                background-color:   $hover_background$;
+                border-color:       $hover_border$;
+            }
+
+            #center a * { margin: 0px; }
+            #center a h1 { font-size:  $font_number$; }
+            #center a h2 { font-size:  $font_short$; }
+            #center a h3 { font-size:  $font_name$; }
+
+            #search {
+                color:              $search_color$;
+                background-color:   $search_background$;
+                border:             $search_border_thickness$ solid $search_border$;
+                grid-column:        span $page_columns$;
+                overflow:           hidden;
+                padding:            $search_padding$;
+            }
+
+            #search input {
+                all:        unset;
+                font-size:  $font_search$;
+                width:      100%;
+            }
+        </style>
+        <script>
+            window.onload = function () {
+                document.getElementById("search").reset();
+            }
+        </script>
+    </head>
+    <body>
+        <div id="center">
+            <form id="search" action="http://$search_target$/">
+                <input type="text" name="q" placeholder="$search_default$" autofocus required/>
+            </form>
+            $entry$
+        </div>
+    </body>
+</html>
